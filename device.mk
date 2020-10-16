@@ -57,8 +57,6 @@ PRODUCT_PACKAGES += \
     libqcomfm_jni \
     qcom.fmradio
 
-PRODUCT_BOOT_JARS += qcom.fmradio
-
 # GMS
 ifeq ($(WITH_GMS),true)
 GMS_MAKEFILE=gms_minimal.mk
