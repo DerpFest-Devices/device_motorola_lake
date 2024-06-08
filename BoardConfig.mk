@@ -24,15 +24,6 @@ include device/motorola/msm8998-common/BoardConfigCommon.mk
 
 DEVICE_PATH := device/motorola/lake
 
-# A/B updater
-AB_OTA_UPDATER := true
-
-AB_OTA_PARTITIONS += \
-    boot \
-    dtbo \
-    system \
-    vendor
-
 # Assertions
 TARGET_BOARD_INFO_FILE := device/motorola/lake/board-info.txt
 TARGET_OTA_ASSERT_DEVICE := lake,lake_n
