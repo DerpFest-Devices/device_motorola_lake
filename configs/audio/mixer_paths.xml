@@ -252,6 +252,7 @@
 	<ctl name="SPK ASP TX2 Source" value="Zero" />
 	<ctl name="SLIMTX5 Input 1" value="AIF1RX1" />
 	<ctl name="SLIMTX6 Input 1" value="None" />
+	<ctl name="EC Reference Channels" value="Zero"/>
 	<!-- usb headset -->
 	<ctl name="AFE_PCM_RX Audio Mixer MultiMedia1" value="0" />
 	<ctl name="AFE_PCM_RX Audio Mixer MultiMedia4" value="0" />
@@ -265,6 +266,7 @@
 	<ctl name="AFE_PCM_RX Audio Mixer MultiMedia16" value="0" />
 	<ctl name="MultiMedia1 Mixer AFE_PCM_TX" value="0" />
 	<ctl name="AFE_PCM_RX Audio Mixer MultiMedia5" value="0" />
+	<ctl name="MultiMedia10 Mixer USB_AUDIO_TX" value="0" />
 	<!-- usb headset end -->
 	<!-- fm -->
 	<ctl name="PRI MI2S LOOPBACK Volume" value="0" />
@@ -370,6 +372,8 @@
 	<ctl name="MultiMedia8 Mixer SLIM_0_TX" value="0" />
 	<ctl name="MultiMedia8 Mixer SLIM_7_TX" value="0" />
 	<ctl name="MultiMedia8 Mixer AFE_PCM_TX" value="0" />
+	<ctl name="MultiMedia10 Mixer SLIM_0_TX" value="0" />
+        <ctl name="MultiMedia10 Mixer SLIM_7_TX" value="0" />
 	<!-- audio record compress end-->
 	<!-- listen -->
 	<ctl name="LSM1 Port" value="None" />
@@ -437,6 +441,7 @@
 
 	<path name="echo-reference">
 		<ctl name="AUDIO_REF_EC_UL1 MUX" value="SLIM_RX" />
+		<ctl name="EC Reference Channels" value="Two"/>
 	</path>
 
 	<path name="echo-reference speaker">
@@ -448,6 +453,21 @@
 
 	<path name="echo-reference bt-sco-wb">
 	</path>
+
+	<path name="echo-reference-voip">
+        	<ctl name="AUDIO_REF_EC_UL1 MUX" value="SLIM_RX" />
+        	<ctl name="EC Reference Channels" value="One"/>
+    	</path>
+
+    	<path name="echo-reference-voip handset">
+        	<ctl name="AUDIO_REF_EC_UL10 MUX" value="RX_CDC_DMA_RX_0" />
+        	<ctl name="EC Reference Channels" value="One"/>
+    	</path>
+
+    	<path name="echo-reference-voip headphones">
+        	<ctl name="AUDIO_REF_EC_UL10 MUX" value="RX_CDC_DMA_RX_0" />
+        	<ctl name="EC Reference Channels" value="Two"/>
+    	</path>
 
 	<path name="low-latency-playback">
 		<ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia5" value="1" />
@@ -1129,5 +1149,60 @@
 	<path name="voice-tty-vco-handset-mic">
 		<path name="handset-mic" />
 	</path>
+
+	<!-- VoIP Rx settings -->
+    	<path name="audio-playback-voip">
+        	<ctl name="PRI_MI2S_RX Audio Mixer MultiMedia10" value="1" />
+    	</path>
+    	<path name="audio-playback-voip handset">
+        	<ctl name="RX_CDC_DMA_RX_0 Audio Mixer MultiMedia10" value="1" />
+    	</path>
+    	<path name="audio-playback-voip headphones">
+        	<ctl name="RX_CDC_DMA_RX_0 Audio Mixer MultiMedia10" value="1" />
+    	</path>
+    	<path name="audio-playback-voip headset">
+        <path name="audio-playback-voip headphones" />
+    	</path>
+    	<path name="audio-playback-voip bt-sco">
+        	<ctl name="SLIMBUS_7_RX Audio Mixer MultiMedia10" value="1" />
+    	</path>
+    	<path name="audio-playback-voip bt-sco-wb">
+        <path name="audio-playback-voip bt-sco" />
+    	</path>
+    	<path name="audio-playback-voip bt-sco-swb">
+        <path name="audio-playback-voip bt-sco" />
+    	</path>
+    	<path name="audio-playback-voip bt-a2dp">
+        	<ctl name="SLIMBUS_7_RX Audio Mixer MultiMedia10" value="1" />
+    	</path>
+    	<path name="audio-playback-voip afe-proxy">
+        	<ctl name="AFE_PCM_RX Audio Mixer MultiMedia10" value="1" />
+    	</path>
+    	<path name="audio-playback-voip usb-headphones">
+        	<ctl name="USB_AUDIO_RX Audio Mixer MultiMedia10" value="1" />
+    	</path>
+    	<path name="audio-playback-voip usb-headset">
+        	<ctl name="USB_AUDIO_RX Audio Mixer MultiMedia10" value="1" />
+    	</path>
+
+        <!-- VoIP Tx settings -->
+    	<path name="audio-record-voip">
+        	<ctl name="MultiMedia10 Mixer TX_CDC_DMA_TX_3" value="1" />
+    	</path>
+    	<path name="audio-record-voip usb-headset-mic">
+        	<ctl name="MultiMedia10 Mixer USB_AUDIO_TX" value="1" />
+    	</path>
+    	<path name="audio-record-voip bt-sco">
+        	<ctl name="MultiMedia10 Mixer SLIM_7_TX" value="1" />
+    	</path>
+    	<path name="audio-record-voip bt-sco-wb">
+        	<path name="audio-record-voip bt-sco" />
+    	</path>
+    	<path name="audio-record-voip bt-sco-swb">
+        	<path name="audio-record-voip bt-sco" />
+    	</path>
+    	<path name="audio-record-voip headset-mic">
+        	<ctl name="MultiMedia10 Mixer TX_CDC_DMA_TX_4" value="1" />
+    	</path>
 
 </mixer>
