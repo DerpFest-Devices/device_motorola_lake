@@ -432,14 +432,6 @@ vendor/lib64/libmmcamera_faceproc2.so
 vendor/lib64/libmmcamera_tintless_algo.so
 vendor/lib64/libmmcamera_tintless_bg_pca_algo.so
 
-# Camera - MotCamera2
--system/app/MotoSignatureApp/MotoSignatureApp.apk;PRESIGNED
-system/etc/permissions/com.motorola.camera2.denali.xml
-system/etc/permissions/com.motorola.motosignature.xml
-system/etc/permissions/privapp-permissions-com.motorola.camera2.xml|7d108928f254ddd31d853e0bc59fd9e2bc244241
-system/framework/com.motorola.motosignature.jar
-system/priv-app/MotCamera2/MotCamera2.apk
-
 # Camera - Postprocessing
 vendor/lib/libS5k2l7Pdaf.so
 vendor/lib/libS5k2l7PdafCamif.so
