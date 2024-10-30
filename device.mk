@@ -12,10 +12,12 @@ TARGET_MOTO_PLATFORM := sdm660
 PRODUCT_ACTIONABLE_COMPATIBLE_PROPERTY_DISABLE := true
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-
 PRODUCT_PACKAGES += \
-    NoCutoutOverlay
+    FrameworksRes \
+    NoCutoutOverlay \
+    SettingsLake \
+    SettingsProviderLake \
+    SystemUILake
 
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
