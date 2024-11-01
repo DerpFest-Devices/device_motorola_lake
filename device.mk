@@ -74,6 +74,10 @@ PRODUCT_COPY_FILES += \
 # Partitions
 PRODUCT_RETROFIT_DYNAMIC_PARTITIONS := true
 
+# Power
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+
 # Sensors
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf \
