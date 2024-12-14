@@ -5,4 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_lake.mk
+    $(LOCAL_DIR)/derp_lake.mk
+
+COMMON_LUNCH_CHOICES := \
+    derp_lake-eng \
+    derp_lake-user \
+    derp_lake-userdebug
